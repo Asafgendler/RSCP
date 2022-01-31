@@ -193,7 +193,6 @@ python ./RSCP/RSCP_exp.py -a 0.1 -d 0.25 -s 50 -r 0.0 --n_s 1  --batch_size 512 
 To reproduce the results needed to create Figure S11 of the Supplementary Material run
 ```
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet --Salman
-python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.0 --n_s 1 --batch_size 1024 --dataset CIFAR10 --arc ResNet
 
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.0 --n_s 1 --batch_size 1024 --dataset CIFAR10 --arc ResNet
@@ -203,19 +202,14 @@ python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.0 --n_s 1 --batch_size 1024
 To reproduce the results needed to create Figure S12 of the Supplementary Material run
 ```
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet --coverage_on_label
-python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 256 --batch_size 1024 --dataset CIFAR100 --arc ResNet --My_model --coverage_on_label
-
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.0 --n_s 1 --batch_size 1024 --dataset CIFAR10 --arc ResNet --coverage_on_label
-python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.0 --n_s 1 --batch_size 1024 --dataset CIFAR100 --arc ResNet --My_model --coverage_on_label
 ```
 
 To reproduce the results needed to create Figure S13 of the Supplementary Material run
 ```
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --sigma_model 0.0 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet
-python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --sigma_model 0.125 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet
-python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2  --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet
-
-python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --sigma_model 0.0 --n_s 256 --batch_size 1024 --dataset CIFAR100 --arc ResNet --My_model 
+python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 1 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet
+python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet
 ```
 
 The Results will replace the current results in the RSCP/Results folder
