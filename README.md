@@ -166,8 +166,8 @@ python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.0 --n_s 1 --batch_size 1024
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 256 --batch_size 256 --dataset CIFAR10 --arc DenseNet --My_model
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.0 --n_s 1 --batch_size 256 --dataset CIFAR10 --arc DenseNet --My_model
 
-python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet
-python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.0 --n_s 1 --batch_size 1024 --dataset CIFAR10 --arc ResNet
+python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet --My_model
+python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.0 --n_s 1 --batch_size 1024 --dataset CIFAR10 --arc ResNet --My_model
 
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 256 --batch_size 1024 --dataset CIFAR100 --arc VGG --My_model
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.0 --n_s 1 --batch_size 1024 --dataset CIFAR100 --arc VGG --My_model
@@ -175,8 +175,8 @@ python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.0 --n_s 1 --batch_size 1024
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 256 --batch_size 256 --dataset CIFAR100 --arc DenseNet --My_model
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.0 --n_s 1 --batch_size 256 --dataset CIFAR100 --arc DenseNet --My_model
 
-python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 256 --batch_size 1024 --dataset CIFAR100 --arc ResNet
-python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.0 --n_s 1 --batch_size 1024 --dataset CIFAR100 --arc ResNet
+python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 256 --batch_size 1024 --dataset CIFAR100 --arc ResNet --My_model
+python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.0 --n_s 1 --batch_size 1024 --dataset CIFAR100 --arc ResNet --My_model
 ```
 
 To reproduce the results needed to create Figure S10 of the Supplementary Material you simply need the results from the experiments used to create Figure 5 of the main paper.
