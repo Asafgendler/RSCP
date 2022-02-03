@@ -7,7 +7,7 @@ import sys
 sys.path.insert(0, './')
 
 # parameters
-parser = argparse.ArgumentParser(description='Main Results')
+parser = argparse.ArgumentParser(description='Salman model Results')
 parser.add_argument('--My_CIFAR10', action='store_true', help='Results on my CIFAR10 model or Cohens')
 args = parser.parse_args()
 

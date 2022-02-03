@@ -41,7 +41,7 @@ for k, dataset in enumerate(datasets):
         My_model = False
         normalized = False
         if dataset == "CIFAR10":
-            ratios = np.array([1, 2, 4, 8])
+            ratios = np.array([0.5, 1, 2, 4, 8])
         else:
             epsilon = 0.25
             n_smooth = 64
