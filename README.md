@@ -87,6 +87,7 @@ python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 64 --batch_size 1024 
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 128 --batch_size 1024 --dataset CIFAR10 --arc ResNet
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 512 --batch_size 1024 --dataset CIFAR10 --arc ResNet
+python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 1024 --batch_size 1024 --dataset CIFAR10 --arc ResNet
 ```
 
 To reproduce the results needed to create Figure 1 of the main paper run:
@@ -103,6 +104,7 @@ python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.0 --n_s 1 --batch_size 1024
 
 To reproduce the results needed to create Figure S7 of the Supplementary Material run:
 ```
+python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.5 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 1 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 4 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet
@@ -120,6 +122,10 @@ python ./RSCP/RSCP_exp.py -a 0.1 -d 0.25 -s 50 -r 1 --n_s 64 --batch_size 512 --
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.25 -s 50 -r 2 --n_s 64 --batch_size 512 --dataset ImageNet --arc ResNet
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.25 -s 50 -r 4 --n_s 64 --batch_size 512 --dataset ImageNet --arc ResNet
 ```
+note: for the first experiment you will need to train a ResNet-110 model for CIFAR10 with Gussian noise of 
+standard deviation 0.0625 using [Cohen et al (2019)](https://github.com/locuslab/smoothing/blob/master/experiments.MD) code.
+Then put the model in ./Pretrained_Models/Cohen/cifar10/resnet110/noise_0.0625/
+Or you can download the model we allready trained from [here](https://drive.google.com/file/d/1_6nWqsXL-A73jlwBNRYUCaP98QLbg2jD/view?usp=sharing).
 
 To reproduce the results needed to create Figure S8 of the Supplementary Material run:
 ```
@@ -190,12 +196,15 @@ python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.0 --n_s 1 --batch_size 1024
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.25 -s 50 -r 0.0 --n_s 1  --batch_size 512 --dataset ImageNet --arc ResNet
 ```
 
-To reproduce the results needed to create Figure S11 of the Supplementary Material run
+To reproduce the results needed to create Figure S11 of the Supplementary Material you will need to train a ResNet-110 model
+for CIFAR10 through adversarial training with Gussian noise of standard deviation 0.25 and eps=32 using [Salman et al (2019)](https://github.com/Hadisalman/smoothing-adversarial) code.
+Then put the model in ./Pretrained_Models/Salman/cifar10/PGD_10steps_multiNoiseSamples/2-multitrain/eps_32/cifar10/resnet110/noise_0.25/
+Or you can download the model we allready trained from [here](https://drive.google.com/file/d/1AspyDLKq11PcYLXFNGae7HeABgf31zmJ/view?usp=sharing).
+Then run:
 ```
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet --Salman
 
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet
-python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.0 --n_s 1 --batch_size 1024 --dataset CIFAR10 --arc ResNet
 
 ```
 
@@ -208,6 +217,7 @@ python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.0 --n_s 1 --batch_size 1024
 To reproduce the results needed to create Figure S13 of the Supplementary Material run
 ```
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --sigma_model 0.0 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet
+python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 0.5 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 1 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet
 python ./RSCP/RSCP_exp.py -a 0.1 -d 0.125 -s 50 -r 2 --n_s 256 --batch_size 1024 --dataset CIFAR10 --arc ResNet
 ```
