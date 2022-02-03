@@ -237,8 +237,9 @@ if My_model:
 else:
     if dataset == "CIFAR10":
         if Salman:
-            checkpoint = torch.load(
-                './Pretrained_Models/Salman/cifar10/finetune_cifar_from_imagenetPGD2steps/PGD_10steps_30epochs_multinoise/2-multitrain/eps_64/cifar10/resnet110/noise_'+str(sigma_model)+'/checkpoint.pth.tar', map_location=device)
+            #checkpoint = torch.load(
+            #    './Pretrained_Models/Salman/cifar10/finetune_cifar_from_imagenetPGD2steps/PGD_10steps_30epochs_multinoise/2-multitrain/eps_64/cifar10/resnet110/noise_'+str(sigma_model)+'/checkpoint.pth.tar', map_location=device)
+            checkpoint = torch.load('./Pretrained_Models/Salman/cifar10/PGD_10steps_multiNoiseSamples/2-multitrain/eps_32/cifar10/resnet110/noise_'+str(sigma_model)+'/checkpoint.pth.tar', map_location=device)
         else:
             checkpoint = torch.load(
                 './Pretrained_Models/Cohen/cifar10/resnet110/noise_' + str(sigma_model) + '/checkpoint.pth.tar', map_location=device)
@@ -364,6 +365,22 @@ scores_simple_adv_test = get_scores(model, x_test_adv_base, indices, n_smooth, s
 # get smooth scores of whole adversarial test set
 print("Calculating smoothed scores on the adversarial test points:\n")
 smoothed_scores_adv_test, scores_smoothed_adv_test = get_scores(model, x_test_adv, indices, n_smooth, sigma_smooth, num_of_classes, scores_list, base=False, device=device, GPU_CAPACITY=GPU_CAPACITY)
+
+# save scores
+# one_hot_lables = np.zeros((n_test, num_of_classes))
+# flattend_input = np.zeros((n_test, (x_test[0].flatten()).size()[0]))
+# flattend_input_adv = np.zeros((n_test, (x_test_adv[0].flatten()).size()[0]))
+# for i in range(n_test):
+#     one_hot_lables[i, y_test[i]] = 1
+#     flattend_input[i, :] = np.array(x_test[i].flatten())
+#     flattend_input_adv[i, :] = np.array(x_test_adv[i].flatten())
+# dict_to_save_clean = {'labels': one_hot_lables, 'scores_HPS': scores_simple_clean_test[0],'scores_APS': scores_simple_clean_test[1],'scores_smoothed_HPS': np.zeros((0,0)),'scores_smoothed_APS': np.zeros((0,0)), 'features': flattend_input}
+# dict_to_save_adv = {'labels': one_hot_lables, 'scores_HPS': scores_simple_adv_test[0],'scores_APS': scores_simple_adv_test[1],'scores_smoothed_HPS': np.zeros((0,0)),'scores_smoothed_APS': np.zeros((0,0)), 'features': flattend_input_adv}
+#
+#
+# np.save("regular_model_clean_test", dict_to_save_clean)
+# np.save("regular_model_adv_test", dict_to_save_adv)
+# exit(1)
 
 # clean unnecessary data
 del x_test, x_test_adv, x_test_adv_base
