@@ -43,8 +43,8 @@ for k, dataset in enumerate(datasets):
 
     if dataset == "ImageNet":
         epsilon = 0.25
-        n_smooths = np.array([1, 2, 4, 8, 16, 32, 64, 128])
-        breaks = (1, 2, 4, 8, 16, 64, 128)
+        n_smooths = np.array([1, 2, 4, 8, 16, 32, 64, 128, 256])
+        breaks = (1, 2, 4, 8, 16, 64, 128, 256)
     else:
         epsilon = 0.125
         n_smooths = np.array([1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024])
@@ -107,10 +107,10 @@ for k, dataset in enumerate(datasets):
 
 
 def breaks_fun(x):
-    if np.max(x) > 130:
+    if np.max(x) > 260:
         return [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]
     else:
-        return [1, 2, 4, 8, 16, 32, 64, 128]
+        return [1, 2, 4, 8, 16, 32, 64, 128, 256]
 
 
 if comparison:
